@@ -1,57 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Société Française de Location de Voitures</title>
+    <link rel="stylesheet" href="assets/css/styles.css"> 
+</head>
+<body>
+    <h1 class="ay">Bienvenue chez Hela Auto</h1>
+    <h4 class="qqw">Choisissez notre voiture!</h4>
+    <a href="index3.html">
+        <button name="connexion" class="connexion">Connexion</button>
+    </a>
 
-    <!-- Web page CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <div class="dateform" id="grandient">
+        <div class="mod"> 
+            <label for="typeVoiture" class="mod2">Choisir le type de voiture</label>
+            <select id="typeVoiture" name="typeVoiture" class="mod"> 
+                <option value="" class="mod2">Sélectionner</option>
+                <option value="berline" class="mod2">Berline</option>
+                <option value="citadine" class="mod2">Citadine</option>
+                <option value="suv" class="mod2">SUV</option>
+                <option value="compacte" class="mod2">Compacte</option>
+                <option value="coupe" class="mod2">Coupé</option>
+                <option value="pickup" class="mod2">Pick-up</option>
+                <option value="monospace" class="mod2">Monospace</option>
+                <option value="utilitaire" class="mod2">Utilitaire</option>
+            </select>
 
-    <!-- Favicons -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/icons/car1.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/icons/car2.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/icons/car3.png"
-    />
+            <label for="modeleVoiture" class="mod2">Choisir le modèle</label>
+            <select id="modeleVoiture" name="modeleVoiture" class="mod2">
+                <option value="" class="mod">Sélectionner un type de voiture d'abord</option>
+            </select>
+            <button id="submitBtn" type="submit" class="mod2">Soumettre</button>
+           
+            
+           
 
-    <title>JabTV Landing Page</title>
-  </head>
-  <body>
-    <!-- Navbar -->
+        </div>
+        <div class="mod">
+            <label for="date1" class="mod1">Choisir une date de début :</label>
+            <input type="date" id="date1" name="date1" class="label">
 
-    <!-- Dark/light theme switcher -->
+            <label for="date2" class="mod1">Choisir la date de fin :</label>
+            <input type="date" id="date2" name="date2" class="label">
+            <p id="errorMessage" style="color: red;"></p>
+        </div>
 
-    <!-- Bars -->
+        
+        <script src="index2.js"></script> 
+        <div class="car-section"></div>
+        <h3 class="jji">Trouver la location de voiture idéale est plus facile que jamais</h3>
 
-    <!-- Hero section -->
+        <div>
+            
+            <div class="car-category">
+                <h3 class="a30">Coupé</h3>
+                    <a href="index6.html?image=/img/coupe.png&name=BMW%20coupe">
+                        <img src="/img/coupe.png" alt="BMW">
+                    </a>
+                    <a href="index6.html?image=/img/coupe1.png&name=Porsche%20coupe">
+                        <img src="/img/coupe1.png" alt="Porsche">
+                    </a>>
+            </div>
 
-    <!-- About section -->
+            <h3 class="a30">Berline</h3>
+            <div class="image-container">
+                <a href="index6.html?image=/img/berline1.png&name=Fiat%20Tipo%20Berline">
+                    <img src="/img/berline1.png" alt="Fiat Tipo Berline">
+                </a>
+                <a href="index6.html?image=/img/berline2.png&name=MG%205">
+                    <img src="/img/berline2.png" alt="MG 5">
+                </a>
+                <a href="index6.html?image=/img/berline3.png&name=Mercedes-Benz%20Classe%20C%20Plug-in%20Hybride">
+                    <img src="/img/berline3.png" alt="Mercedes-Benz Classe C Plug-in Hybride">
+                </a>
+                <a href="index6.html?image=/img/berline4.png&name=Honda%20Civic%20Hybride">
+                    <img src="/img/berline4.png" alt="Honda Civic Hybride">
+                </a>
+                <a href="index6.html?image=/img/berline5.png&name=Skoda%20Octavia%20RS">
+                    <img src="/img/berline5.png" alt="Skoda Octavia RS">
+                </a>
+                <a href="index6.html?image=/img/berline6.png&name=Toyota%20Corolla%20Sedan%20Hybride">
+                    <img src="/img/berline6.png" alt="Toyota Corolla Sedan Hybride">
+                </a>
+            </div>
 
-    <!-- Lightbox image gallery -->
+            <div class="image-container">
+                <h3 class="a30">SUV</h3>
+                <a href="index6.html?image=/img/suv.png&name=Skoda%20Kushaq%20SUV">
+                    <img src="/img/suv.png" alt="Skoda Kushaq">
+                </a>
+                <a href="index6.html?image=/img/suv1.png&name=Opel%20Mokka%20SUV">
+                    <img src="/img/suv1.png" alt="Opel Mokka">
+                </a>
+                <a href="index6.html?image=/img/dacia.png&name=Dacia%20Sandero%20Stepway%20SUV">
+                    <img src="/img/dacia.png" alt="Dacia Sandero Stepway">
+                </a>
+                <a href="index6.html?image=/img/suv3.png&name=Hyundai%20Venue%20SUV">
+                    <img src="/img/suv3.png" alt="Hyundai Venue">
+                </a>
+            </div>
+            <div class="car-category image-container">
+                <h3 class="a30">Compacte</h3>
+                <a href="index6.html?image=/img/compact.png&name=Seat%20Leon%20Compact">
+                    <img src="/img/compact.png" alt="Seat Leon">
+                </a>
+                <a href="index6.html?image=/img/compact1.png&name=Volkswagen%20Golf 8%20Compact">
+                    <img src="/img/compact1.png" alt="Volkswagen Golf 8">
+                </a>
+                <a href="index6.html?image=/img/compact2.png&name=Cupra%20Compact">
+                    <img src="/img/compact2.png" alt="Cupra">
+                </a>
+                <a href="index6.html?image=/img/compact3.png&name=Renault%20Megane%20Compact">
+                    <img src="/img/compact3.png" alt="Renault Megane">
+                </a>
+            </div>
+            <div class="car-category">
+                <h3 class="a30">Pick-up</h3>
+                <a href="index6.html?image=/img/pick-up.png&name=Toyota%20Hilux%20Double%20Cabine%20Pick-up">
+                    <img src="/img/pick-up.png" alt="Toyota Hilux Double Cabine">
+                </a>
+                <a href="index6.html?image=/img/pick-up4.png&name=Mitsubishi%20L200%20Double%20Cabine%20Pick-up">
+                    <img src="/img/pick-up4.png" alt="Mitsubishi L200 Double Cabine">
+                </a>
+                <a href="index6.html?image=/img/pick-up1.png&name=Toyota%20Land%20Cruiser%2079%20Pick-up">
+                    <img src="/img/pick-up1.png" alt="Toyota Land Cruiser 79">
+                </a>
+                <a href="index6.html?image=/img/pick-up3.png&name=Volkswagen%20Amarok%20Pick-up">
+                    <img src="/img/pick-up3.png" alt="Volkswagen Amarok">
+                </a>
+            </div>
+            <div class="car-category">
+                <h3 class="a30">Citadine</h3>
+                <a href="index6.html?image=/img/citadine1.png&name=Skoda ctavia%20Citadine">
+                    <img src="/img/citadine1.png" alt="Skoda ctavia">
+                </a>
+                <a href="index6.html?image=/img/citadine2.png&name=polo 8%20Citadine">
+                    <img src="/img/citadine2.png" alt="polo 8">
+                </a>
+                <a href="index6.html?image=/img/citadine6.png&name=kia%20picanto%20Citadine">
+                    <img src="/img/citadine6.png" alt="kia picanto">
+                </a>
+                <a href="index6.html?image=/img/citadine3.png&name=Toyota%20Yaris%20Citadine">
+                    <img src="/img/citadine3.png" alt="Toyota Yaris">
+                </a>
+            </div>
 
-    <!-- Jab TV Stakeholders -->
-
-    <!-- Email subscription -->
-
-    <!-- Social icons -->
-
-    <!-- Scroll to top button -->
-
-    <!-- Web page script -->
-    <script src="assets/js/app.js"></script>
-
-  </body>
+            <div class="car-category">
+                <h3 class="a30">Monospace</h3>
+                <a href="index6.html?image=/img/monospace1.png&name=Peugeot%20500%20Monospace">
+                    <img src="img/monospace1.png" alt="Peugeot 500">
+                </a>
+                <a href="index6.html?image=/img/monospace2.png&name=marcedes class v %20 Monospace">
+                    <img src="img/monospace2.png" alt="marcedes class v">
+                </a>
+                <a href="index6.html?image=/img/monospace.png&name=Toyota%20Previa%20Monospace">
+                    <img src="img/monospace.png" alt="Toyota Previa">
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
 </html>

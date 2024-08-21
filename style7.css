@@ -1,0 +1,80 @@
+.ww{
+    text-align: center;
+    grid-template-areas: unset;
+    isolation: initial;
+    color: #ec0f0f;
+    text-shadow: 0px 0px 10px #06ddf5,
+    0px 0px 20px #06ddf5, 0px 0px 40px #06ddf5, 0px 0px 80px #06ddf5;
+    font-size: 90px;
+    color: #cc0000;
+}
+.f1{
+    color: #080706;
+    background: local;
+    text-align: center;
+    size: 40px;
+    text-shadow: 2px 4px 10px #ffffff,2px 4px 10px #ffffff,2px 4px 10px #6f7cb8,2px 4px 10px #e8e561 ;
+    font-size: 30px;
+    
+
+}
+.f12 {
+    
+    position: absolute;
+    font-size: 1.1em; 
+    padding: 0.6em 1.2em; 
+    background-color: #7b1a1a;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px; 
+    color: #dedede;
+    box-shadow: 0.3em 0.3em 0.3em rgba(7, 66, 78, 0.3); 
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+    font-family: Arial, sans-serif;
+}
+
+.f12::before {
+    position: left;
+    content: '';
+    height: 0;
+    width: 0;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, #212121 0%, #212121 50%, #96041f 50%, #BF0426 60%);
+    border-radius: 0 0 8px 0; 
+    box-shadow: 0.2em 0.2em 0.2em rgba(175, 102, 102, 0.3);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.f12:hover::before {
+    width: 1.4em;
+    height: 1.4em;
+}
+
+.f12:active {
+    box-shadow: 0.2em 0.2em 0.3em rgba(72, 33, 33, 0.4);
+    transform: translate(0.1em, 0.1em);
+}
+.f13 {
+    color: #0b0c10;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.f13-background {
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Utiliser 100% pour couvrir toute la largeur de la page */
+    height: 100%; /* Utiliser 100% pour couvrir toute la hauteur de la page */
+    overflow: hidden;
+    z-index: -1;
+    background-size: cover; /* Cette propriété fait en sorte que l'image couvre toute la page */
+    background-position: center; /* Centrer l'image dans la page */
+    background-repeat: no-repeat; /* Évite que l'image se répète */
+}

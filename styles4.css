@@ -1,0 +1,120 @@
+.error-message {
+    color: #e74c3c; 
+    display: none;  
+    font-weight: bold; 
+    margin-top: 0.5em;
+    font-size: 0.9em; 
+}
+
+input:invalid {
+    border-color: #e74c3c; 
+    outline: none; 
+    box-shadow: 0 0 5px rgba(231, 76, 60, 0.5); 
+    padding: 0.5em; 
+    border-radius: 5px; 
+}
+
+.pwd2 {
+    text-align: center;
+    height: 50px; 
+    width: 100%; 
+    max-width: 350px; 
+    margin: 10px auto; 
+    border-radius: 8px; 
+    border: 1px solid #ddd; 
+    padding: 0.5em; 
+    font-size: 1em; 
+}
+
+.pwd1 {
+    position: relative;
+    font-size: 1.1em; 
+    padding: 0.6em 1.2em; 
+    background-color: #7b1a1a;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px; 
+    color: #dedede;
+    box-shadow: 0.3em 0.3em 0.3em rgba(7, 66, 78, 0.3); 
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+    font-family: Arial, sans-serif;
+}
+
+.pwd1::before {
+    position: absolute;
+    content: '';
+    height: 0;
+    width: 0;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, #212121 0%, #212121 50%, #96041f 50%, #BF0426 60%);
+    border-radius: 0 0 8px 0; 
+    box-shadow: 0.2em 0.2em 0.2em rgba(175, 102, 102, 0.3);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.pwd1:hover::before {
+    width: 1.4em;
+    height: 1.4em;
+}
+
+.pwd1:active {
+    box-shadow: 0.2em 0.2em 0.3em rgba(72, 33, 33, 0.4);
+    transform: translate(0.1em, 0.1em);
+}
+
+.total {
+    gap: 1.5em; 
+    padding: 1.5em; 
+    background-color: #251695;
+    border-radius: 20px; 
+    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
+    margin: 20px auto; 
+    max-width: 90%; 
+}
+
+.total:hover {
+    transform: scale(1.05);
+    border: 1px solid #06ddf5;
+}
+
+#heading {
+    text-align: center;
+    margin: 1.5em;
+    color: rgb(255, 255, 255); 
+    font-size: 1.4em; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+}
+.a00{
+    text-align: center;
+    grid-template-areas: unset;
+    isolation: initial;
+    color: #ec0f0f;
+    text-shadow: 0px 0px 10px #06ddf5,
+    0px 0px 20px #06ddf5, 0px 0px 40px #06ddf5, 0px 0px 80px #06ddf5;
+    font-size: 50px;
+    color: #cc0000;
+}
+
+    
+
+.b00{
+    text-align: center;
+    grid-template-areas: unset;
+    transition: 0.4ms;
+    isolation: initial;
+    overscroll-behavior-x: 40px;
+    color: rgb(69, 2, 135);
+}
+.class{
+    color: #212121;
+    font-size: large;
+    scrollbar-color: #ef8605;
+    gap: 1.5ms;
+    padding: 2.5mm;
+    margin: 10px auto;
+
+    
+}

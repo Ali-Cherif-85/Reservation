@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails de l'Image</title>
+    <style>
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1; 
+        }
+
+        .video-background video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            background-size: cover;
+        }
+
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            color: rgb(181, 205, 109);
+            text-align: center;
+            padding: 50px;
+            font-size: x-large;
+        }
+
+        .image-detail {
+            text-align: center;
+        }
+        .image-detail img {
+            width: 400px;
+            height: auto;
+        }
+        .image-detail h2 {
+            font-size: 30px;
+            margin-top: 10px;
+        }
+        .car-specs {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="/img/premier video.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas les vidéos HTML5.
+        </video>
+    </div>
+
+    <div class="content">
+        <h1>Détails de l'Image Sélectionnée</h1>
+        <div class="image-detail">
+            <img id="displayImage" src="" alt="Image sélectionnée">
+            <h2 id="carName">Nom de la voiture</h2>
+            <div id="carSpecs" class="car-specs">Caractéristiques de la voiture</div>
+        </div>
+    </div>
+    
+    <script class="ww">
+        window.onload = function() {
+            
+            function getQueryParam(param) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
+
+            
+            const imageSrc = getQueryParam('image');
+            const carName = getQueryParam('name');
+
+            
+            if (imageSrc) {
+                document.getElementById('displayImage').src = imageSrc;
+            } else {
+                document.getElementById('displayImage').alt = "Aucune image sélectionnée";
+            }
+
+            if (carName) {
+                document.getElementById('carName').textContent = decodeURIComponent(carName);
+                displayCarSpecs(decodeURIComponent(carName));
+            } else {
+                document.getElementById('carName').textContent = "Nom de la voiture non disponible";
+                document.getElementById('carSpecs').textContent = "";
+            }
+
+            
+            function displayCarSpecs(name) { 
+                let specs = "";
+                switch (name) {
+                    case "Fiat Tipo Berline":
+                        specs = "Caractéristiques de la Fiat Tipo Berline :\n- Moteur : 1.6L\n- Puissance : 110 ch\n- Consommation : 6.0 L/100 km";
+                        break;
+                    case "MG 5":
+                        specs = "Caractéristiques de la MG 5 :\n- Moteur : 1.5L Turbo\n- Puissance : 160 ch\n- Consommation : 7.0 L/100 km";
+                        break;
+                    case "Mercedes-Benz Classe C Plug-in Hybride":
+                        specs = "Caractéristiques de la Mercedes-Benz Classe C Plug-in Hybride :\n- Moteur : 2.0L + électrique\n- Puissance : 320 ch\n- Consommation : 4.0 L/100 km";
+                        break;
+                    case "Honda Civic Hybride":
+                        specs = "Caractéristiques de la Honda Civic Hybride :\n- Moteur : 1.5L Hybride\n- Puissance : 150 ch\n- Consommation : 5.5 L/100 km";
+                        break;
+                    case "Skoda Octavia RS":
+                        specs = "Caractéristiques de la Skoda Octavia RS :\n- Moteur : 2.0L Turbo\n- Puissance : 245 ch\n- Consommation : 7.5 L/100 km";
+                        break;
+                    case "Toyota Corolla Sedan Hybride":
+                        specs = "Caractéristiques de la Toyota Corolla Sedan Hybride :\n- Moteur : 1.8L Hybride\n- Puissance : 122 ch\n- Consommation : 4.5 L/100 km";
+                        break;
+                    case "Skoda Kushaq SUV":
+                        specs = "Caractéristiques de la Skoda Kushaq SUV :\n- Moteur : 1.0L TSI\n- Puissance : 115 ch\n- Consommation : 6.0 L/100 km";
+                        break;
+                    case "Opel Mokka SUV":
+                        specs = "Caractéristiques de l'Opel Mokka :\n- Moteur : 1.2L Turbo\n- Puissance : 130 ch\n- Consommation : 5.8 L/100 km";
+                        break;
+                    case "Cupra Compact":
+                        specs = "Caractéristiques de cupra :\n- Moteur : 1.2L Turbo\n- Puissance : 130 ch\n- Consommation : 5.8 L/100 km  ";
+                        
+                        break;
+                        case "Dacia Sandero Stepway SUV":
+                        specs = "Caractéristiques de Dacia Sandero Stepway SUV :\n- Moteur : 1.0L Turbo\n- Puissance : 110 ch\n- Consommation : 6.8 L/100 km  ";
+                        
+                        break;
+                        case "Hyundai Venue SUV":
+                        specs = "Caractéristiques de Hyundai Venue SUV :\n- Moteur : 1.5L Turbo\n- Puissance : 150 ch\n- Consommation : 6.8 L/100 km  ";
+                        
+                        break;
+                        case "BMW coupe":
+                        specs = "Caractéristiques de BMW coupe :\n- Moteur : 2.2L Turbo\n- Puissance : 300 ch\n- Consommation : 7.8 L/100 km  ";
+                        
+                        break;
+                        case "Porsche coupe":
+                        specs = "Caractéristiques de Porsche coupe :\n- Moteur : 3L Turbo\n- Puissance : 450 ch\n- Consommation : 10.5 L/100 km  ";
+                        
+                        break;
+                        case "Seat Leon Compact":
+                        specs = "Caractéristiques de Seat Leon Compact :\n- Moteur : 1.0L Turbo\n- Puissance : 110 ch\n- Consommation : 5.2 L/100 km  ";
+                        
+                        break;
+                        case "Volkswagen Golf 8 Compact":
+                        specs = "Caractéristiques de VolkswagenGolf 8 Compact:\n- Moteur : 1.2L Turbo\n- Puissance : 150 ch\n- Consommation : 6.8 L/100 km  ";
+                        
+                        break;
+                        case "Renault Megane Compact":
+                        specs = "Caractéristiques de Renault Megane Compact :\n- Moteur : 2.0L Turbo\n- Puissance : 150 ch\n- Consommation : 6.9 L/100 km  ";
+                        
+                        break;
+                        case "Toyota Hilux Double Cabine Pick-up":
+                        specs = "Caractéristiques de Toyota Hilux Double Cabine Pick-up :\n- Moteur : 3L Turbo\n- Puissance : 200 ch\n- Consommation : 9 L/100 km  ";
+                        
+                        break;
+                        case "Mitsubishi L200 Double Cabine Pick-up":
+                        specs = "Caractéristiques de Mitsubishi L200 Double Cabine Pick-up :\n- Moteur : 2.8L Turbo\n- Puissance : 220 ch\n- Consommation : 8.8 L/100 km  ";
+                        
+                        break;
+                        case "polo 8 Citadine":
+                        specs = "Caractéristiques de polo 8 Citadine :\n- Moteur : 1.0L Turbo\n- Puissance : 105 ch\n- Consommation : 5.2 L/100 km  ";
+                        
+                        break;
+                        case "Toyota Land Cruiser 79 Pick-up":
+                        specs = "Caractéristiques de Toyota Land Cruiser 79 Pick-up :\n- Moteur : 2.5L Turbo\n- Puissance : 280 ch\n- Consommation : 10.8 L/100 km  ";
+                        
+                        break;
+                        case "Volkswagen Amarok Pick-up":
+                        specs = "Caractéristiques de Volkswagen Amarok Pick-up :\n- Moteur : 2.2L Turbo\n- Puissance : 200 ch\n- Consommation : 7.8 L/100 km  ";
+                        
+                        break;
+                        case "Skoda ctavia Citadine":
+                        specs = "Caractéristiques de Skoda ctavia Citadine :\n- Moteur : 1.2L Turbo\n- Puissance : 130 ch\n- Consommation : 5.8 L/100 km  ";
+                        
+                        break;
+                        case "kia picanto Citadine":
+                        specs = "Caractéristiques de kia picanto Citadine:\n- Moteur : 1.2L Turbo\n- Puissance : 85 ch\n- Consommation : 4.8 L/100 km  ";
+                        
+                        break;
+                        case "Toyota Yaris Citadine":
+                        specs = "Caractéristiques de Toyota Yaris Citadine:\n- Moteur : 1.2L Turbo\n- Puissance : 85 ch\n- Consommation : 4.8 L/100 km  ";
+                        
+                        break;
+                        case "Peugeot 500 Monospace":
+                        specs = "Caractéristiques de Peugeot 500 Monospace:\n- Moteur : 1.4L Turbo\n- Puissance : 180 ch\n- Consommation : 7.2 L/100 km  ";
+                        
+                        break;
+                        case "marcedes class v   Monospace":
+                        specs = "Caractéristiques de marcedes class v   Monospace:\n- Moteur : 1.8L Turbo\n- Puissance : 210 ch\n- Consommation : 7.8 L/100 km  ";
+                        
+                        break;
+                        case "Toyota Previa Monospace":
+                        specs = "Caractéristiques de Toyota Previa Monospace:\n- Moteur : 1.4L Turbo\n- Puissance : 160 ch\n- Consommation : 6.8 L/100 km  ";
+                        
+                        break;
+
+                    default:
+                        specs = "Caractéristiques non disponibles pour ce modèle.";
+                }
+                document.getElementById('carSpecs').textContent = specs;
+            }
+        };
+    </script>
+</body>
+</html>
+
+
+
+
+
+

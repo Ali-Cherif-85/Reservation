@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Détails de la Voiture</title>
+</head class="f13">
+<body class="f13">
+    <div class="f13">
+    <h1 class="ww" class="f13">Détails de la Voiture Sélectionnée</h1>
+    <p id="carType" class="f1"></p>
+    <p id="carModel" class="f1"></p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const carType = urlParams.get('type');
+            const carModel = urlParams.get('modele');
+
+            document.getElementById('carType').textContent = `Type de voiture: ${decodeURIComponent(carType)}`;
+            document.getElementById('carModel').textContent = `Modèle de voiture: ${decodeURIComponent(carModel)}`;
+        });
+    </script>
+    <link rel="stylesheet" href="style7.css">
+    <h1 class="f1">Résumé de la réservation</h1>
+    <p id="carDetails" class="f1"></p>
+    <p id="daysCount" class="f1"></p>
+    <p id="totalPrice" class="f1"></p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const type = params.get('type');
+            const modele = params.get('modele');
+            const jours = parseInt(params.get('jours'), 10);
+
+            const prixParMois = {
+                berline: 2700,
+                citadine: 2550,
+                suv: 5700,
+                compacte: 3300,
+                coupe: 13500,
+                pickup: 7500,
+                monospace: 3000,
+                utilitaire: 2970
+            };
+
+            
+            if (!type || !modele || isNaN(jours)) {
+                document.getElementById('carDetails').textContent = 'Les informations nécessaires sont manquantes.';
+                return;
+            }
+
+            const prixParJour = prixParMois[type] / 30;
+
+            const prixTotal = prixParJour * jours;
+
+            document.getElementById('carDetails').textContent = `Vous avez sélectionné : ${modele}`;
+            document.getElementById('daysCount').textContent = `Nombre de jours : ${jours}`;
+            document.getElementById('totalPrice').textContent = `Prix total estimé : ${prixTotal} €`;
+        });
+    </script>
+    <button class="f12">confirmer</button>
+    <img src="/img/pour index7" alt="pour si" class="f13">
+    <p> pour plus des informations contact nous sur les num suivants :
+        +337521489
+        +337841248
+    </p>
+</div>
+</body>
+</html>
+
